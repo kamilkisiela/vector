@@ -1,10 +1,7 @@
 name: Release Suite
 
 on:
-  push:
-    tags:
-      - v0.*
-      - v1.*
+  workflow_call: {}
 
 jobs:
   Release:
