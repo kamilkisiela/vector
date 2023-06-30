@@ -1,7 +1,7 @@
 name: Release Suite
 
 on:
-  workflow_call: {}
+  workflow_dispatch: {}
 
 jobs:
   Release:
