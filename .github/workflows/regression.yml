@@ -104,7 +104,7 @@ jobs:
 
   compute-metadata:
     name: Compute metadata
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: should-run
     if: github.event_name != 'merge_group' || needs.should-run.outputs.source_changed == 'true'
     outputs:
@@ -280,7 +280,7 @@ jobs:
 
   build-baseline:
     name: Build baseline Vector container
-    runs-on: [linux, ubuntu-20.04-4core]
+    runs-on: ubuntu-latest
     needs:
       - compute-metadata
     steps:
@@ -317,7 +317,7 @@ jobs:
 
   build-comparison:
     name: Build comparison Vector container
-    runs-on: [linux, ubuntu-20.04-4core]
+    runs-on: ubuntu-latest
     needs:
       - compute-metadata
     steps:
@@ -354,7 +354,7 @@ jobs:
 
   confirm-valid-credentials:
     name: Confirm AWS credentials are minimally valid
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs:
       - compute-metadata
     steps:
@@ -375,7 +375,7 @@ jobs:
 
   upload-baseline-image-to-ecr:
     name: Upload baseline images to ECR
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs:
       - compute-metadata
       - confirm-valid-credentials
@@ -413,7 +413,7 @@ jobs:
 
   upload-comparison-image-to-ecr:
     name: Upload comparison images to ECR
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs:
       - compute-metadata
       - confirm-valid-credentials
@@ -451,7 +451,7 @@ jobs:
 
   submit-job:
     name: Submit regression job
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs:
       - compute-metadata
       - upload-baseline-image-to-ecr
@@ -586,7 +586,7 @@ jobs:
 
   detect-regression:
     name: Determine regression status
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs:
       - submit-job
       - compute-metadata
@@ -662,7 +662,7 @@ jobs:
 
   analyze-experiment:
     name: Download regression analysis & upload report
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs:
       - submit-job
       - compute-metadata

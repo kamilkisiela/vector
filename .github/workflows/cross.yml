@@ -78,7 +78,7 @@ jobs:
 
   update-pr-status:
     name: (PR comment) Signal result to PR
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     needs: cross-linux
     if: needs.cross-linux.result == 'success' && github.event_name == 'issue_comment'
     steps:

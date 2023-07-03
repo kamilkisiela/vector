@@ -6,7 +6,7 @@ on:
 jobs:
 
   test-windows:
-    runs-on: [windows, windows-2019-8core]
+    runs-on: windows-latest
     steps:
       - name: (PR comment) Get PR branch
         if: ${{ github.event_name == 'issue_comment' }}

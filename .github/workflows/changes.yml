@@ -106,7 +106,7 @@ on:
 jobs:
   # Detects changes that are not specific to integration tests
   source:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     if: ${{ inputs.source }}
     outputs:
       source: ${{ steps.filter.outputs.source }}

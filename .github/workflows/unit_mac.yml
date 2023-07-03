@@ -8,7 +8,7 @@ jobs:
     # Full CI suites for this platform were only recently introduced.
     # Some failures are permitted until we can properly correct them.
     continue-on-error: true
-    runs-on: macos-11
+    runs-on: macos-latest
     env:
       CARGO_INCREMENTAL: 0
     steps:

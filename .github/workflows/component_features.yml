@@ -18,8 +18,7 @@ on:
 
 jobs:
   check-component-features:
-    # use free tier on schedule and 8 core to expedite results on demand invocation
-    runs-on: ${{ github.event_name == 'schedule' && 'ubuntu-latest' || fromJSON('["linux", "ubuntu-20.04-8core"]') }}
+    runs-on: ubuntu-latest
     if: github.event_name == 'issue_comment' || github.event_name == 'workflow_dispatch'
     steps:
       - name: (PR comment) Get PR branch
