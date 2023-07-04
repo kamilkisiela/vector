@@ -13,7 +13,7 @@ env:
 
 jobs:
   publish-new-environment:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: (PR comment) Get PR branch
         if: ${{ github.event_name == 'issue_comment' }}

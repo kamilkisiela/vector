@@ -43,7 +43,7 @@ env:
 jobs:
   prep-pr:
     name: (PR comment) Signal pending to PR
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: contains(github.event.comment.body, '/ci-run-integration') || contains(github.event.comment.body, '/ci-run-all')
     steps:
       - name: Get PR comment author
@@ -151,7 +151,7 @@ jobs:
 
   update-pr-status:
     name: Signal result to PR
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: test-integration
     if: always() && (contains(github.event.comment.body, '/ci-run-integration') || contains(github.event.comment.body, '/ci-run-all'))
     steps:

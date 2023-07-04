@@ -12,7 +12,7 @@ on:
 jobs:
   move-to-backlog:
     name: Move issues back to Gardener project board Triage
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: contains(github.event.issue.url, 'issues')
     steps:
       - name: Move issue back to Triage if status is Blocked/Waiting

@@ -104,7 +104,7 @@ jobs:
     name: Master Merge Queue Suite
     # Always run this so that pull_request triggers are marked as success.
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs:
       - changes
       - test-cli

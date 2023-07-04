@@ -44,7 +44,7 @@ env:
 jobs:
   validate:
     name: Validate comment
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: |
       github.event.issue.pull_request && ( contains(github.event.comment.body, '/ci-run-all')
           || contains(github.event.comment.body, '/ci-run-cli')

@@ -35,7 +35,7 @@ jobs:
 
   checks:
     name: Checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: changes
     env:
       CARGO_INCREMENTAL: 0
@@ -125,7 +125,7 @@ jobs:
   # This is a required status check, so it always needs to run if prior jobs failed, in order to mark the status correctly.
   all-checks:
     name: Test Suite
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: always()
     needs: checks
     env:
