@@ -1,6 +1,9 @@
 [alias]
 vdev = "run --quiet --package vdev --"
 
+[registries.crates-io]
+protocol = "sparse"
+
 [target.'cfg(all())']
 rustflags = [
   "-Dclippy::print_stdout",
