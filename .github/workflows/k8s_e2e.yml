@@ -16,14 +16,14 @@ name: K8S E2E Suite
 
 on:
   workflow_dispatch:
-  pull_request:
-  issue_comment:
-    types: [created]
+  # pull_request:
+  # issue_comment:
+  #   types: [created]
   merge_group:
     types: [checks_requested]
-  schedule:
-    # At midnight UTC Tue-Sat
-    - cron: '0 0 * * 2-6'
+  # schedule:
+  #   # At midnight UTC Tue-Sat
+  #   - cron: '0 0 * * 2-6'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.event.comment.html_url || github.event.merge_group.head_sha || github.event.schedule || github.sha }}
